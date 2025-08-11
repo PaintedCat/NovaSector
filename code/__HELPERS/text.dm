@@ -183,7 +183,7 @@
 				last_char_group = LETTERS_DETECTED
 
 			// a  .. z
-			if(97 to 12, 1072 to 1103, 1105) //Lowercase Letters //CHANGE SpaceCub: add Cyrillic support. Original "97 to 122"
+			if(97 to 122, 1072 to 1103, 1105) //Lowercase Letters //CHANGE SpaceCub: add Cyrillic support. Original "97 to 122"
 				if(last_char_group == NO_CHARS_DETECTED || last_char_group == SPACES_DETECTED || cap_after_symbols && last_char_group == SYMBOLS_DETECTED) //start of a word
 					char = uppertext(char)
 				number_of_alphanumeric++
