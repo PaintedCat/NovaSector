@@ -4,7 +4,7 @@
 /// Base font
 /datum/font/pixellari
 	name = "Pixellari"
-	font_family = 'interface/fonts/Pixellari_modiff.ttf' ///CHANGE SpaceCub: using Cyrillic fonts
+	font_family = 'interface/fonts/Pixellari_modiff.ttf' ///CHANGE SpaceCub: using Cyrillic fonts interface/fonts/Pixellari.ttf>interface/fonts/Pixellari_modiff.ttf
 
 /// For icon overlays
 /// Pixellari 12pt metrics generated using Lummox's dmifontsplus (https://www.byond.com/developer/LummoxJR/DmiFontsPlus)

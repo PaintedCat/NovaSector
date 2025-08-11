@@ -4,7 +4,7 @@
 /// Base font
 /datum/font/spessfont
 	name = "Spess Font"
-	font_family = 'interface/fonts/SpessFontRus.ttf' ///CHANGE SpaceCub: using Cyrillic fonts
+	font_family = 'interface/fonts/SpessFontRus.ttf' ///CHANGE SpaceCub: using Cyrillic fonts interface/fonts/SpessFont.ttf>interface/fonts/SpessFontRus.ttf
 
 /// For icon overlays
 /// Spess Font 6pt metrics generated using Lummox's dmifontsplus (https://www.byond.com/developer/LummoxJR/DmiFontsPlus)

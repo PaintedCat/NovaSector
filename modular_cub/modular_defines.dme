@@ -1,5 +1,6 @@
 // pathes to our defines
 
-// ..\-parent directory
+// ...\-parent directory
 // all defines should be in code\_DEFINES\~~cub_defines
 // #include path\to\define.dm
+#include "..\code\_DEFINES\~~cub_defines\rust_utils.dm"
