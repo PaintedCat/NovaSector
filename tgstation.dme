@@ -510,6 +510,7 @@
 #include "code\__DEFINES\~nova_defines\_HELPERS\lighting.dm"
 #include "code\__DEFINES\~nova_defines\_HELPERS\offset_index.dm"
 #include "code\__DEFINES\~nova_defines\traits\declarations.dm"
+#include "modular_cub\modular_defines.dme" //ADD SpaceCub:setup enviroment
 #include "code\__HELPERS\_auxtools_api.dm"
 #include "code\__HELPERS\_dreamluau.dm"
 #include "code\__HELPERS\_lists.dm"
@@ -9291,3 +9292,4 @@
 #include "modular_nova\modules\xenoarchartifacts\obj\particle_battery.dm"
 #include "modular_nova\modules\xenoarchartifacts\obj\wave_scanner.dm"
 // END_INCLUDE
+#include "modular_cub/modular_cub.dme" //ADD SpaceCub:setup enviroment

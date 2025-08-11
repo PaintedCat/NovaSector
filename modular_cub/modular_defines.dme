@@ -1,0 +1,5 @@
+// pathes to our defines
+
+// ..\-parent directory
+// all defines should be in code\_DEFINES\~~cub_defines
+// #include path\to\define.dm
