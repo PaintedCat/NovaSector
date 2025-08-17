@@ -11,3 +11,15 @@ Tiny Unicode created by Jakob Riedle/DuffsDevice. Website indicates free for com
 
 VCR OSD Mono created by Riciery Leal/mrmanet. Website indicates 100% free, author confirms it's free for all to use.
 (https://www.dafont.com/font-comment.php?file=vcr_osd_mono)
+
+Modified version of Grand9K Pixel created by Bluemoon-Labs.
+(https://github.com/BlueMoon-Labs/WhiteMoon-Station/blob/master/interface/fonts/Grand9K_Pixel_modif.ttf)
+
+Modified version of Pixellari created by BlueMoon-Labs.
+(https://github.com/BlueMoon-Labs/WhiteMoon-Station/blob/master/interface/fonts/Pixellari_modif.ttf)
+
+Cyrillic version of SpessFont created by Lyutsikkk
+(https://github.com/Lyutsikkk/Andromeda-13/blob/master/interface/fonts/SpessFontRus.ttf)
+
+Cyrillic version of TinyUnicode created by Lyutsikkk
+(https://github.com/Lyutsikkk/Andromeda-13/blob/master/interface/fonts/TinyUnicodeRus.ttf)
