@@ -18,7 +18,7 @@
 	return 1
 
 /client/proc/load_player_discord()
-	var/datum/db_query/query = SSdbcore.NewQuery("SELECT discord_id FROM [CONFIG_GET(string/utility_database)].[format_table_name("discord_links")] WHERE valid=1 AND ckey=:ckey", list("ckey" = ckey))
+	var/datum/db_query/query = SSdbcore.NewQuery("SELECT discord_id FROM [CONFIG_GET(string/feedback_database)].[format_table_name("discord_links")] WHERE valid=1 AND ckey=:ckey", list("ckey" = ckey))
 
 	if(!query.warn_execute())
 		qdel(query)
