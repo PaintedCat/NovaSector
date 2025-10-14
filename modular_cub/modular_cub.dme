@@ -2,3 +2,4 @@
 
 //Please keep the alphabetical order for the paths.
 #include "cyrillic\_cyrillic.dme"
+#include "discord_auth\_discord.dme"
