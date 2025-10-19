@@ -84,7 +84,20 @@ GLOBAL_LIST_EMPTY_TYPED(interaction_instances, /datum/interaction)
 			if(INTERACTION_REQUIRE_TARGET_HAND)
 				if(!target.get_active_hand())
 					return FALSE
-
+			// Space Cub:ARK STATION MIRROR- EDIT ADDITION START
+			if(INTERACTION_REQUIRE_SELF_MOUTH)
+				if(user.is_mouth_covered(ITEM_SLOT_MASK))
+					return FALSE
+			if(INTERACTION_REQUIRE_TARGET_MOUTH)
+				if(target.is_mouth_covered(ITEM_SLOT_MASK))
+					return FALSE
+			if(INTERACTION_REQUIRE_SELF_CHEST)
+				if(!get_location_accessible(user, BODY_ZONE_CHEST))
+					return FALSE
+			if(INTERACTION_REQUIRE_TARGET_CHEST)
+				if(!get_location_accessible(target, BODY_ZONE_CHEST))
+					return FALSE
+			// Space Cub:ARK STATION MIRROR- EDIT ADDITION END
 			else
 				CRASH("Unimplemented interaction requirement '[requirement]'")
 	return TRUE
