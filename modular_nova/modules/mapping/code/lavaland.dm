@@ -1,6 +1,8 @@
 /*----- Template for ruins, prevents needing to re-type the filepath prefix -----*/
 /datum/map_template/ruin/lavaland/nova
 	prefix = "_maps/RandomRuins/LavaRuins/nova/"
+/datum/map_template/ruin/lavaland/cub
+	prefix = "_maps/RandomRuins/LavaRuins/cub/"
 /*------*/
 
 /datum/map_template/ruin/lavaland/ash_walker
@@ -19,6 +21,16 @@
 	description = "A planetside Interdyne research facility developing biological weapons; it is closely guarded by an elite team of agents."
 	prefix = "_maps/RandomRuins/LavaRuins/nova/"
 	suffix = "lavaland_surface_interdyne_base1.dmm"
+	allow_duplicates = FALSE
+	never_spawn_with = list(/datum/map_template/ruin/icemoon/underground/nova/interdyne_base)
+	always_place = FALSE
+
+/datum/map_template/ruin/lavaland/cub/interdyne_base
+	name = "Lava-Ruin Interdyne Pharmaceutics Space Cub Base 3c76928"
+	id = "lava-base"
+	description = "A planetside Interdyne research facility developing biological weapons; it is closely guarded by an elite team of agents."
+	prefix = "_maps/RandomRuins/LavaRuins/cub/"
+	suffix = "lavaland_surface_syndicate_base1.dmm"
 	allow_duplicates = FALSE
 	never_spawn_with = list(/datum/map_template/ruin/icemoon/underground/nova/interdyne_base)
 	always_place = TRUE
