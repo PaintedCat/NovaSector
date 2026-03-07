@@ -92,10 +92,10 @@ GLOBAL_LIST_EMPTY_TYPED(interaction_instances, /datum/interaction)
 				if(target.is_mouth_covered(ITEM_SLOT_MASK))
 					return FALSE
 			if(INTERACTION_REQUIRE_SELF_CHEST)
-				if(!get_location_accessible(user, BODY_ZONE_CHEST))
+				if(!user.is_location_accessible(BODY_ZONE_CHEST))
 					return FALSE
 			if(INTERACTION_REQUIRE_TARGET_CHEST)
-				if(!get_location_accessible(target, BODY_ZONE_CHEST))
+				if(!target.is_location_accessible(BODY_ZONE_CHEST))
 					return FALSE
 			// Space Cub:ARK STATION MIRROR- EDIT ADDITION END
 			else
