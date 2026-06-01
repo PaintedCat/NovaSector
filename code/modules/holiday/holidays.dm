@@ -100,9 +100,11 @@ GLOBAL_LIST_INIT(holiday_mail, list())
 	switch(pattern)
 		if(PATTERN_RANDOM)
 			return "#[random_short_color()]"
+		/*
 		if(PATTERN_RAINBOW)
 			var/datum/holiday/pride_week/rainbow_datum = new()
 			return rainbow_datum.get_holiday_colors(thing_to_color, PATTERN_DEFAULT)
+		*/
 	if(!length(GLOB.holidays))
 		return
 	for(var/holiday_key in GLOB.holidays)
@@ -138,6 +140,7 @@ GLOBAL_LIST_INIT(holiday_mail, list())
 /datum/holiday/groundhog/getStationPrefix()
 	return pick("Deja Vu") //I have been to this place before
 
+/*
 /datum/holiday/nz
 	name = "Waitangi Day"
 	timezones = list(TIMEZONE_NZDT, TIMEZONE_CHADT)
@@ -156,7 +159,7 @@ GLOBAL_LIST_INIT(holiday_mail, list())
 /datum/holiday/nz/greet()
 	var/nz_age = text2num(time2text(world.timeofday, "YYYY", TIMEZONE_NZST)) - 1840
 	return "On this day [nz_age] years ago, New Zealand's Treaty of Waitangi, the founding document of the nation, was signed!"
-
+*/
 /datum/holiday/valentines
 	name = VALENTINES
 	begin_day = 13
@@ -461,6 +464,7 @@ GLOBAL_LIST_INIT(holiday_mail, list())
 	begin_month = JUNE
 	holiday_hat = /obj/item/clothing/head/costume/garland
 
+/*
 /datum/holiday/pride_week
 	name = PRIDE_WEEK
 	begin_month = JUNE
@@ -489,7 +493,7 @@ GLOBAL_LIST_INIT(holiday_mail, list())
 		/obj/item/food/snowcones/rainbow,
 		/obj/item/toy/crayon/rainbow,
 	)
-
+*/
 // JULY
 
 /datum/holiday/doctor
@@ -518,6 +522,7 @@ GLOBAL_LIST_INIT(holiday_mail, list())
 /datum/holiday/ufo/getStationPrefix() //Is such a thing even possible?
 	return pick("Ayy","Truth","Tsoukalos","Mulder","Scully") //Yes it is!
 
+/*
 /datum/holiday/usa
 	name = "US Independence Day"
 	timezones = list(TIMEZONE_EDT, TIMEZONE_CDT, TIMEZONE_MDT, TIMEZONE_MST, TIMEZONE_PDT, TIMEZONE_AKDT, TIMEZONE_HDT, TIMEZONE_HST)
@@ -536,13 +541,13 @@ GLOBAL_LIST_INIT(holiday_mail, list())
 
 /datum/holiday/usa/getStationPrefix()
 	return pick("Independent","American","Burger","Bald Eagle","Star-Spangled", "Fireworks")
-
+*/
 /datum/holiday/writer
 	name = "Writer's Day"
 	begin_day = 8
 	begin_month = JULY
 	holiday_mail = list(/obj/item/pen/fountain)
-
+/*
 /datum/holiday/france
 	name = "Bastille Day"
 	timezones = list(TIMEZONE_CEST)
@@ -562,7 +567,7 @@ GLOBAL_LIST_INIT(holiday_mail, list())
 
 /datum/holiday/france/greet()
 	return "Do you hear the people sing?"
-
+*/
 /datum/holiday/hotdogday
 	name = HOTDOG_DAY
 	begin_day = 17
@@ -602,7 +607,7 @@ GLOBAL_LIST_INIT(holiday_mail, list())
 	return pick("Endangered language", "Word", "Language", "Language revitalization", "Potato", "Corn")
 
 // AUGUST
-
+/*
 /datum/holiday/ukraine
 	name = "Independence Day of Ukraine"
 	begin_month = AUGUST
@@ -611,7 +616,7 @@ GLOBAL_LIST_INIT(holiday_mail, list())
 
 /datum/holiday/ukraine/getStationPrefix()
 	return pick("Kyiv", "Ukraine")
-
+*/
 // SEPTEMBER
 
 //Tiziran Unification Day is celebrated on Sept 1st, the day on which lizards were made a roundstart race
@@ -733,7 +738,7 @@ GLOBAL_LIST_INIT(holiday_mail, list())
 
 /datum/holiday/vegan/getStationPrefix()
 	return pick("Tofu", "Tempeh", "Seitan", "Tofurkey")
-
+/*
 /datum/holiday/october_revolution
 	name = "October Revolution"
 	begin_day = 6
@@ -747,7 +752,7 @@ GLOBAL_LIST_INIT(holiday_mail, list())
 
 /datum/holiday/october_revolution/getStationPrefix()
 	return pick("Communist", "Soviet", "Bolshevik", "Socialist", "Red", "Workers'")
-
+*/
 /datum/holiday/remembrance_day
 	name = "Remembrance Day"
 	begin_month = NOVEMBER

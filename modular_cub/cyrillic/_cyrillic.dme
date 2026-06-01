@@ -1,0 +1,3 @@
+#include "_cyrillic.dm"
+
+#include "code/cyrillic.dm"

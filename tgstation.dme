@@ -525,6 +525,8 @@
 #include "code\__DEFINES\~nova_defines\_HELPERS\lighting.dm"
 #include "code\__DEFINES\~nova_defines\_HELPERS\offset_index.dm"
 #include "code\__DEFINES\~nova_defines\traits\declarations.dm"
+#include "code\__DEFINES\~~cub_defines\interaction_defines.dm"
+#include "modular_cub\modular_defines.dme" //ADD SpaceCub:setup enviroment
 #include "code\__HELPERS\_auxtools_api.dm"
 #include "code\__HELPERS\_dreamluau.dm"
 #include "code\__HELPERS\_level_traits.dm"
@@ -9420,7 +9422,8 @@
 #include "modular_nova\modules\records_on_examine\code\record_variables.dm"
 #include "modular_nova\modules\records_on_examine\code\records_procs.dm"
 #include "modular_nova\modules\records_on_examine\code\view_exploitables.dm"
-#include "modular_nova\modules\research\techweb\nodes\disabled-experiments.dm"
+//REMOVE SpaceCub: We need more experiments
+//#include "modular_nova\modules\research\techweb\nodes\disabled-experiments.dm"
 #include "modular_nova\modules\resleeving\code\rsd_interface.dm"
 #include "modular_nova\modules\resleeving\code\research\resleeving_research.dm"
 #include "modular_nova\modules\robot_limb_detach\code\robot_limb_detach_quirk.dm"
@@ -9771,3 +9774,4 @@
 #include "modular_nova\modules\xenomorph\alien.dm"
 #include "modular_nova\modules\xenomorph\queen.dm"
 // END_INCLUDE
+#include "modular_cub/modular_cub.dme" //ADD SpaceCub:setup enviroment
