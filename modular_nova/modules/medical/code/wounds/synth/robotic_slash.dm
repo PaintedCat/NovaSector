@@ -214,7 +214,8 @@
 	if (HAS_TRAIT(victim, TRAIT_SHOCKIMMUNE)) // it'd be a bit cheesy to just become immune to this, so it only makes it a lot lot better
 		base_mult *= shock_immunity_self_damage_reduction
 
-	base_mult *= limb.get_splint_factor()
+	var/splint_mult = (limb.current_gauze ? limb.current_gauze.splint_factor : 1)
+	base_mult *= splint_mult
 
 	return overall_effect_mult * base_mult
 
@@ -262,8 +263,7 @@
 /datum/wound/electrical_damage/modify_desc_before_span(desc, mob/user)
 	. = ..()
 
-	var/obj/item/stack/medical/wrap/current_gauze = LAZYACCESS(limb.applied_items, LIMB_ITEM_GAUZE)
-	if (isnull(current_gauze))
+	if (limb.current_gauze)
 		return
 
 	var/intensity_mult = get_intensity_mult()

@@ -201,7 +201,6 @@
 /area/shuttle/escape)
 "bd" = (
 /obj/machinery/stasis,
-/obj/machinery/vitals_reader/directional/east,
 /turf/open/floor/mineral/titanium/white,
 /area/shuttle/escape)
 "be" = (
@@ -604,9 +603,9 @@ ac
 ad
 ad
 ad
+ac
 ad
-ad
-ad
+ac
 ad
 aa
 "}

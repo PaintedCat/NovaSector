@@ -38,7 +38,6 @@
 		"synth_r_leg",
 		"synth_l_d_leg",
 		"synth_r_d_leg",
-		"synth_diy",
 	)
 
 /datum/techweb_node/android_organs
@@ -48,7 +47,6 @@
 	description = "Internal Mechanisms for Synthetics and IPC's."
 	prereq_ids = list(TECHWEB_NODE_ROBOTICS)
 	design_ids = list(
-		"synth_posi",
 		"synth_eyes",
 		"synth_tongue",
 		"synth_liver",
@@ -106,14 +104,6 @@
 		"smartdartgun",
 		"cone_of_shame",
 		"defibrillator",
-		"medkit",
-	)
-	return ..()
-
-/datum/techweb_node/material_processing/New()
-	design_ids += list(
-		"spaceship_plates",
-		"spaceship_glass",
 	)
 	return ..()
 
@@ -238,7 +228,6 @@
 /datum/techweb_node/riot_supression/New()
 	design_ids += list(
 		"ammobench_gimmick",
-		"pin_standard",
 	)
 	return ..()
 
@@ -309,7 +298,6 @@
 	design_ids += list(
 		"mesons_prescription",
 		"bsc_nt",
-		"lrm_board",
 	)
 	return ..()
 
@@ -356,7 +344,7 @@
 	)
 	return ..()
 
-///////////////////////// Applied Bluespace /////////////////////////
+/////////////////////////Applied Bluespace /////////////////////////
 
 /datum/techweb_node/applied_bluespace/New()
 	design_ids += list(
@@ -364,18 +352,10 @@
 	)
 	return ..()
 
-// modsuit stuff
+// modsuit security stuff
 /datum/techweb_node/mod_security/New()
 	design_ids += list(
 		"mod_plating_security",
 		"mod_tether_grounded",
 	)
 	return ..()
-
-/datum/techweb_node/mod_equip/New()
-	design_ids += list(
-		"mod_retract_plates",
-		"mod_magnetic_deploy",
-	)
-	return ..()
-

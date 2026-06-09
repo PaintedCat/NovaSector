@@ -4,7 +4,7 @@
 	desc = "Can be manually filled with reagents from containers."
 	icon_state = "pipe_input"
 	pass_flags_self = PASSMACHINE | LETPASSTHROW // Small
-	reagent_flags = /obj/machinery/plumbing::reagent_flags | REFILLABLE
+	reagent_flags = TRANSPARENT | REFILLABLE
 
 /obj/machinery/plumbing/input/Initialize(mapload, layer)
 	. = ..()
@@ -16,7 +16,7 @@
 	desc = "A manual output for plumbing systems, for taking reagents directly into containers."
 	icon_state = "pipe_output"
 	pass_flags_self = PASSMACHINE | LETPASSTHROW // Small
-	reagent_flags = /obj/machinery/plumbing::reagent_flags | DRAINABLE
+	reagent_flags = TRANSPARENT | DRAINABLE
 	reagents = /datum/reagents
 
 /obj/machinery/plumbing/output/Initialize(mapload, layer)

@@ -40,6 +40,3 @@
 
 /// Helper to figure out if a limb is synthetic
 #define IS_SYNTHETIC_LIMB(limb) (limb.bodytype & BODYTYPE_SYNTHETIC)
-
-/// The scanline filter, so we can remove it easily
-#define HOLOSYNTH_SCANLINE_FILTER_ID "hsfilter"

@@ -452,22 +452,19 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 
 	if(reagents?.has_reagent(/datum/reagent/drug/methamphetamine))
 		reagents.flags |= NO_REACT
+
+	// allowing reagents to react after being lit
 	//NOVA EDIT ADDITION START
 	// Setting the puffed pollutant to cannabis if we're smoking the space drugs reagent(obtained from cannabis)
 	if(reagents.has_reagent(/datum/reagent/drug/space_drugs))
 		pollution_type = /datum/pollutant/smoke/cannabis
 	//NOVA EDIT ADDITION END
 
-	// allowing reagents to react after being lit
-	reagents.handle_reactions()
-	if(QDELETED(src))
-		return
-	START_PROCESSING(SSobj, src)
-
 	update_appearance(UPDATE_ICON)
 	if(flavor_text)
 		var/turf/T = get_turf(src)
 		T.visible_message(flavor_text)
+	START_PROCESSING(SSobj, src)
 
 	if(iscarbon(loc))
 		var/mob/living/carbon/smoker = loc
@@ -516,7 +513,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 		)
 
 	else if(ishuman(guy_infront) && guy_infront.get_bodypart(BODY_ZONE_HEAD) && !guy_infront.is_pepper_proof())
-		smoker.visible_message(
+		guy_infront.visible_message(
 			span_notice("[smoker] exhales a large cloud of smoke from [src] directly at [guy_infront]'s face!"),
 			span_notice("You exhale a large cloud of smoke from [src] directly at [guy_infront]'s face."),
 			ignored_mobs = guy_infront,
@@ -525,7 +522,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 		smoke_in_face(guy_infront)
 
 	else
-		smoker.visible_message(
+		guy_infront.visible_message(
 			span_notice("[smoker] exhales a large cloud of smoke from [src] at [guy_infront]."),
 			span_notice("You exhale a large cloud of smoke from [src] at [guy_infront]."),
 		)
@@ -550,7 +547,6 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	reagents.expose_temperature(heat, 0.05)
 	if(!reagents.total_volume) //may have reacted and gone to 0 after expose_temperature
 		return
-
 	var/to_smoke = smoke_all ? (reagents.total_volume * (dragtime / smoketime)) : REAGENTS_METABOLISM
 	var/mob/living/carbon/smoker = loc
 	// These checks are a bit messy but at least they're fairly readable
@@ -908,18 +904,16 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	smoketime = 20 MINUTES
 	chem_volume = 80
 	list_reagents = list(/datum/reagent/drug/nicotine = 40)
-	type_butt = /obj/item/cigbutt/cigarbutt/cohiba
 
 /obj/item/cigarette/cigar/havana
 	name = "premium Havanian cigar"
 	desc = "A cigar fit for only the best of the best."
-	icon_state = "cigar3off"
-	icon_on = "cigar3on"
-	icon_off = "cigar3off"
+	icon_state = "cigar2off"
+	icon_on = "cigar2on"
+	icon_off = "cigar2off"
 	smoketime = 30 MINUTES
 	chem_volume = 60
 	list_reagents = list(/datum/reagent/drug/nicotine = 45)
-	type_butt = /obj/item/cigbutt/cigarbutt/havana
 
 /obj/item/cigbutt
 	name = "cigarette butt"
@@ -936,12 +930,6 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	name = "cigar butt"
 	desc = "A manky old cigar butt."
 	icon_state = "cigarbutt"
-
-/obj/item/cigbutt/cigarbutt/cohiba
-	icon_state = "cigar2butt"
-
-/obj/item/cigbutt/cigarbutt/havana
-	icon_state = "cigar3butt"
 
 /////////////////
 //SMOKING PIPES//
@@ -1172,11 +1160,8 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 
 	to_chat(user, span_notice("You start puffing on the vape."))
 	reagents.flags &= ~(NO_REACT)
-	reagents.handle_reactions()
-	if(QDELETED(src))
-		return
-	set_light_on(TRUE)
 	START_PROCESSING(SSobj, src)
+	set_light_on(TRUE)
 
 /obj/item/vape/dropped(mob/user)
 	. = ..()

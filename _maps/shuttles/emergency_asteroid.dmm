@@ -278,7 +278,6 @@
 /area/shuttle/escape)
 "bD" = (
 /obj/structure/closet/secure_closet/medical2,
-/obj/machinery/vitals_reader/directional/east,
 /turf/open/floor/mineral/titanium/white,
 /area/shuttle/escape)
 "bE" = (
@@ -387,6 +386,13 @@
 /obj/effect/mapping_helpers/airlock/access/all/security/brig,
 /turf/open/floor/mineral/plastitanium/red,
 /area/shuttle/escape/brig)
+"JM" = (
+/obj/machinery/wall_healer/free{
+	name = "Emergency NanoMed";
+	use_power = 0
+	},
+/turf/closed/wall/mineral/titanium,
+/area/shuttle/escape)
 "Mp" = (
 /obj/structure/chair/comfy/shuttle{
 	dir = 1
@@ -792,7 +798,7 @@ oI
 ac
 bq
 ah
-ac
+JM
 ac
 ac
 ac

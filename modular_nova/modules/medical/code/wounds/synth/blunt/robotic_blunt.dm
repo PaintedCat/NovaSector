@@ -191,7 +191,9 @@
 
 	var/effective_damage = (damage - blocked)
 
-	effective_damage *= limb.get_splint_factor()
+	var/obj/item/stack/gauze = limb.current_gauze
+	if(gauze)
+		effective_damage *= gauze.splint_factor
 
 	switch (limb.body_zone)
 
@@ -345,7 +347,9 @@
 
 	var/overall_mult = 1
 
-	overall_mult *= limb.get_splint_factor()
+	var/obj/item/stack/gauze = limb.current_gauze
+	if (gauze)
+		overall_mult *= gauze.splint_factor
 	if (!victim.has_gravity(get_turf(victim)))
 		overall_mult *= VICTIM_MOVED_NO_GRAVITY_EFFECT_MULT
 	else if (victim.body_position == LYING_DOWN || (!forced && victim.move_intent == MOVE_INTENT_WALK))

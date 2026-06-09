@@ -21,7 +21,4 @@
 	proper_name = holder.name
 	. = ..()
 
-/datum/wires/wire_bundle_component/ui_host(mob/user)
-	return holder.ui_host(user)
-
 #undef CAPACITY_PER_WIRE

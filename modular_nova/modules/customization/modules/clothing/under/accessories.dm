@@ -310,12 +310,9 @@
 /mob/living/carbon/human/emp_act(severity) // necessary to still emp when worn as accessory
 	. = ..()
 	var/obj/item/clothing/under/worn_uniform = w_uniform
-	if(!worn_uniform)
-		return
-	var/obj/item/clothing/accessory/vaporizer/vaporizer = locate() in worn_uniform.attached_accessories
-	vaporizer?.on_emp()
-	var/obj/item/clothing/accessory/energy_shield/energy_shield = locate() in worn_uniform.attached_accessories
-	energy_shield?.emp_act(severity)
+	if(w_uniform)
+		var/obj/item/clothing/accessory/vaporizer/vaporizer = locate() in worn_uniform.attached_accessories
+		vaporizer?.on_emp()
 
 /obj/item/clothing/accessory/vaporizer/emp_act(severity)
 	. = ..()

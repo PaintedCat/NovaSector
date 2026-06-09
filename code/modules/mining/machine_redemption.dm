@@ -6,7 +6,6 @@
 	desc = "A machine that accepts ore and instantly transforms it into workable material sheets. Points for ore are generated based on type and can be redeemed at a mining equipment vendor."
 	icon = 'icons/obj/machines/mining_machines.dmi'
 	icon_state = "ore_redemption"
-	base_icon_state = "ore_redemption"
 	density = TRUE
 	input_dir = NORTH
 	output_dir = SOUTH
@@ -92,14 +91,15 @@
 		points += gathered_ore.points * point_upgrade * gathered_ore.amount
 
 /// Returns the amount of a specific alloy design, based on the accessible materials
-/obj/machinery/mineral/ore_redemption/proc/can_smelt_alloy(datum/design/design)
+/obj/machinery/mineral/ore_redemption/proc/can_smelt_alloy(datum/design/D)
 	var/datum/material_container/mat_container = materials.mat_container
-	if(!mat_container || design.make_reagent)
+	if(!mat_container || D.make_reagent)
 		return FALSE
 
 	var/build_amount = 0
 
-	for(var/mat, amount in design.materials)
+	for(var/mat in D.materials)
+		var/amount = D.materials[mat]
 		var/datum/material/redemption_mat_amount = mat_container.materials[mat]
 
 		if(!amount || !redemption_mat_amount)
@@ -218,10 +218,12 @@
 		unregister_input_turf() // someone just un-wrenched us, unregister the turf
 
 /obj/machinery/mineral/ore_redemption/screwdriver_act(mob/living/user, obj/item/tool)
-	return default_deconstruction_screwdriver(user, tool)
+	default_deconstruction_screwdriver(user, "ore_redemption-open", "ore_redemption", tool)
+	return ITEM_INTERACT_SUCCESS
 
 /obj/machinery/mineral/ore_redemption/crowbar_act(mob/living/user, obj/item/tool)
-	return default_deconstruction_crowbar(user, tool)
+	default_deconstruction_crowbar(tool)
+	return ITEM_INTERACT_SUCCESS
 
 /obj/machinery/mineral/ore_redemption/wrench_act(mob/living/user, obj/item/tool)
 	default_unfasten_wrench(user, tool)
@@ -369,11 +371,11 @@
 				if(amount < 1) //no negative mats
 					return
 				materials.use_materials(alloy.materials, multiplier = amount, action = "withdrawn", name = "sheets", user_data = ID_DATA(usr))
-				var/atom/movable/output
+				var/output
 				if(ispath(alloy.build_path, /obj/item/stack/sheet))
-					output = alloy.create_result(src, amount = amount)
+					output = new alloy.build_path(src, amount)
 				else
-					output = alloy.create_result(src)
+					output = new alloy.build_path(src)
 				unload_mineral(output)
 			else
 				to_chat(usr, span_warning("Required access not found."))
@@ -384,7 +386,7 @@
 	return ..()
 
 /obj/machinery/mineral/ore_redemption/update_icon_state()
-	icon_state = "[base_icon_state][panel_open ? "-open" : powered() ? null : "-off"]"
+	icon_state = "[initial(icon_state)][powered() ? null : "-off"]"
 	return ..()
 
 /obj/machinery/mineral/ore_redemption/update_overlays()

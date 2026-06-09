@@ -95,7 +95,7 @@ handles linking back and forth.
 
 	mat_container = new ( \
 		parent, \
-		SSmaterials.get_materials_by_flag(MATERIAL_SILO_STORED), \
+		SSmaterials.materials_by_category[MAT_CATEGORY_SILO], \
 		local_size, \
 		mat_container_flags, \
 		container_signals = mat_container_signals, \

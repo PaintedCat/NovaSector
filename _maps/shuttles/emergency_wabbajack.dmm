@@ -175,7 +175,7 @@
 /turf/open/floor/mineral/titanium/blue,
 /area/shuttle/escape)
 "aK" = (
-/obj/structure/chair/comfy/shuttle{
+/obj/machinery/stasis{
 	dir = 4
 	},
 /turf/open/floor/mineral/titanium/white,
@@ -304,10 +304,6 @@
 /obj/structure/window/reinforced/spawner/directional/east,
 /turf/open/floor/mineral/titanium/blue,
 /area/shuttle/escape)
-"gN" = (
-/obj/machinery/vitals_reader/directional/east,
-/turf/open/floor/mineral/titanium,
-/area/shuttle/escape)
 "ji" = (
 /obj/structure/chair/comfy/shuttle{
 	dir = 8
@@ -315,10 +311,10 @@
 /turf/open/floor/mineral/titanium/blue,
 /area/shuttle/escape)
 "ks" = (
-/obj/structure/window/reinforced/spawner/directional/east,
-/obj/machinery/stasis{
+/obj/structure/chair/comfy/shuttle{
 	dir = 8
 	},
+/obj/structure/window/reinforced/spawner/directional/east,
 /turf/open/floor/mineral/titanium/white,
 /area/shuttle/escape)
 "rT" = (
@@ -517,7 +513,7 @@ ay
 ab
 bl
 aq
-gN
+aq
 aq
 bn
 ab
@@ -541,7 +537,7 @@ az
 ab
 aF
 ks
-ab
+aq
 ks
 aS
 as

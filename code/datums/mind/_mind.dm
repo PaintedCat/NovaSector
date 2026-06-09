@@ -479,7 +479,6 @@
 			if(G.can_reenter_corpse || even_if_they_cant_reenter)
 				return G
 			break
-	return null
 
 /datum/mind/proc/grab_ghost(force)
 	var/mob/dead/observer/G = get_ghost(even_if_they_cant_reenter = force)
@@ -489,19 +488,15 @@
 
 ///Adds addiction points to the specified addiction
 /datum/mind/proc/add_addiction_points(type, amount)
-	var/last_amount = LAZYACCESS(addiction_points, type) || 0
 	LAZYSET(addiction_points, type, min(LAZYACCESS(addiction_points, type) + amount, MAX_ADDICTION_POINTS))
-	var/new_amount = LAZYACCESS(addiction_points, type)
-	return GLOB.addictions[type].on_gain_addiction_points(src, new_amount, last_amount)
+	var/datum/addiction/affected_addiction = SSaddiction.all_addictions[type]
+	return affected_addiction.on_gain_addiction_points(src)
 
 ///Adds addiction points to the specified addiction
 /datum/mind/proc/remove_addiction_points(type, amount)
-	var/last_amount = LAZYACCESS(addiction_points, type) || 0
 	LAZYSET(addiction_points, type, max(LAZYACCESS(addiction_points, type) - amount, 0))
-	var/new_amount = LAZYACCESS(addiction_points, type)
-	if(new_amount <= 0)
-		LAZYREMOVE(addiction_points, type)
-	return GLOB.addictions[type].on_lose_addiction_points(src, new_amount, last_amount)
+	var/datum/addiction/affected_addiction = SSaddiction.all_addictions[type]
+	return affected_addiction.on_lose_addiction_points(src)
 
 /// Setter for the assigned_role job datum.
 /datum/mind/proc/set_assigned_role(datum/job/new_role)

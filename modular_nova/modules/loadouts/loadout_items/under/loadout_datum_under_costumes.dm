@@ -130,12 +130,7 @@
 
 /datum/loadout_item/under/formal/maid_uniform
 	name = "Maid Uniform"
-	item_path = /obj/item/clothing/under/costume/nova/maid_uniform
-	group = "Costumes"
-
-/datum/loadout_item/under/formal/maid_uniform_alt
-	name = "Maid Uniform (Alternative)"
-	item_path = /obj/item/clothing/under/costume/nova/maid_uniform_alt
+	item_path = /obj/item/clothing/under/rank/civilian/janitor/maid
 	group = "Costumes"
 
 /datum/loadout_item/under/miscellaneous/maid_costume
@@ -252,11 +247,6 @@
 /datum/loadout_item/under/miscellaneous/tactical_hawaiian_green
 	name = "Tactical Hawaiian Outfit (Green)"
 	item_path = /obj/item/clothing/under/tachawaiian/green
-	group = "Costumes"
-
-/datum/loadout_item/under/miscellaneous/gagscamo
-	name = "Camouflage Jumpsuit"
-	item_path = /obj/item/clothing/under/camo/gags
 	group = "Costumes"
 
 /datum/loadout_item/under/formal/tmc

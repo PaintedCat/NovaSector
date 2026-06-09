@@ -99,7 +99,6 @@
 /obj/effect/turf_decal/tile/blue/half{
 	dir = 8
 	},
-/obj/machinery/vitals_reader/directional/west,
 /turf/open/floor/iron/white/smooth_half{
 	dir = 1
 	},
@@ -192,7 +191,6 @@
 "qK" = (
 /obj/machinery/stasis,
 /obj/effect/turf_decal/tile/blue/anticorner,
-/obj/machinery/vitals_reader/directional/east,
 /turf/open/floor/iron/white/smooth_corner{
 	dir = 1
 	},
@@ -259,7 +257,6 @@
 /obj/effect/turf_decal/tile/blue/anticorner{
 	dir = 4
 	},
-/obj/machinery/vitals_reader/directional/east,
 /turf/open/floor/iron/white/smooth_corner{
 	dir = 8
 	},
@@ -730,7 +727,7 @@ ez
 cs
 AW
 FQ
-FQ
+OI
 FQ
 AW
 cs

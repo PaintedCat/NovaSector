@@ -8,13 +8,6 @@
 	},
 /turf/open/floor/plating,
 /area/shuttle/escape)
-"c" = (
-/obj/machinery/stasis{
-	dir = 4
-	},
-/obj/machinery/vitals_reader/directional/north,
-/turf/open/floor/mineral/titanium/white,
-/area/shuttle/escape)
 "d" = (
 /turf/closed/wall/mineral/titanium,
 /area/shuttle/escape)
@@ -81,7 +74,6 @@
 /obj/machinery/stasis{
 	dir = 4
 	},
-/obj/machinery/vitals_reader/directional/south,
 /turf/open/floor/mineral/titanium/white,
 /area/shuttle/escape)
 "r" = (
@@ -265,7 +257,7 @@ U
 (3,1,1) = {"
 C
 d
-c
+q
 v
 q
 d

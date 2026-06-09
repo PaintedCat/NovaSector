@@ -17,6 +17,7 @@
 /datum/antagonist/traitor/marauder/render_preview_outfit(datum/outfit/outfit, mob/living/carbon/human/dummy)
 	//yes this is an OC, but she is canonically dead so its ok. such is the fate of a gorlex marauder
 	dummy = dummy || new /mob/living/carbon/human/dummy/consistent
+//	dummy.set_species(/datum/species/mermaid, icon_update = FALSE)
 	var/obj/item/bodypart/lame_flesh_arm = dummy.get_bodypart(BODY_ZONE_R_ARM)
 	var/obj/item/bodypart/cool_robot_arm = new /obj/item/bodypart/arm/right/robot()
 	cool_robot_arm.set_icon_static('modular_nova/master_files/icons/mob/augmentation/sgmipc.dmi')
@@ -26,14 +27,15 @@
 	dummy.equipOutfit(outfit, visuals_only = TRUE)
 	dummy.underwear = "Striped Boxers"
 	dummy.underwear_color = "#5f534a"
-	dummy.set_haircolor("#ffffff", update = FALSE)
-	dummy.set_hair_gradient_color("#bcb4e7", update = FALSE)
-	dummy.set_hair_gradient_style("Fade Up", update = FALSE)
-	dummy.set_hairstyle("Sideways ponytail")
+	dummy.hair_color = "#ffffff"
+	dummy.set_hair_gradient_color("#bcb4e7")
+	dummy.set_hair_gradient_style("Fade Up")
+	dummy.hairstyle = "Sideways ponytail"
+
 	dummy.update_body(TRUE)
-	var/datum/universal_icon/antag_icon = get_flat_uni_icon(dummy)
+	var/icon = getFlatIcon(dummy)
 	SSatoms.prepare_deletion(dummy)
-	return antag_icon
+	return icon
 
 /datum/antagonist/traitor/marauder/apply_innate_effects(mob/living/mob_override)
 	. = ..()

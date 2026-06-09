@@ -28,14 +28,6 @@
 /*
 *	ITEMS BELOW HERE
 */
-/datum/loadout_item/glasses/nightmare
-	name = "Nightmare Goggles"
-	item_path = /obj/item/clothing/glasses/nightmare_vision
-
-/datum/loadout_item/glasses/welding_goggles
-	name = "Welding Goggles"
-	item_path = /obj/item/clothing/glasses/welding
-	blacklisted_roles = list(JOB_PRISONER)
 
 /datum/loadout_item/glasses/biker
 	name = "Biker Goggles"
