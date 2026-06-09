@@ -7,7 +7,7 @@ SUBSYSTEM_DEF(persistence)
 		/datum/controller/subsystem/mapping,
 		/datum/controller/subsystem/atoms,
 	)
-	ss_flags = SS_NO_FIRE
+	flags = SS_NO_FIRE
 
 	///instantiated wall engraving components
 	var/list/wall_engravings = list()
@@ -72,6 +72,7 @@ SUBSYSTEM_DEF(persistence)
 	load_trophies()
 	load_recent_maps()
 	load_photo_persistence()
+	load_randomized_recipes()
 	load_custom_outfits()
 	load_delamination_counter()
 	load_panic_bunker() //NOVA EDIT ADDITION - PANICBUNKER

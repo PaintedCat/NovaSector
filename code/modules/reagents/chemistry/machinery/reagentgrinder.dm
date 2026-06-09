@@ -177,22 +177,21 @@
 	//surface level checks to filter out items that can be grinded/juice
 	var/list/obj/item/filtered_list = list()
 	for(var/obj/item/ingredient as anything in to_add)
-		// What are we trying to grind exactly?
+		//what are we trying to grind exactly?
 		if((ingredient.item_flags & ABSTRACT) || (ingredient.flags_1 & HOLOGRAM_1))
 			continue
 
-		// Nothing would come from grinding or juicing
+		//Nothing would come from grinding or juicing
 		if(!length(ingredient.grind_results()) && !ingredient.reagents.total_volume)
 			to_chat(user, span_warning("You cannot grind/juice [ingredient] into reagents!"))
 			continue
 
-		// Error messages should be in the objects' definitions
-		if(!ingredient.blend_requirements(src, user))
+		//Error messages should be in the objects' definitions
+		if(!ingredient.blend_requirements(src))
 			continue
 
 		filtered_list += ingredient
-
-	if(!length(filtered_list))
+	if(!filtered_list.len)
 		return FALSE
 
 	//find total weight of all items already in grinder
@@ -273,6 +272,8 @@
 	return NONE
 
 /obj/machinery/reagentgrinder/wrench_act(mob/living/user, obj/item/tool)
+	. = NONE
+
 	if(operating)
 		balloon_alert(user, "still operating!")
 		return ITEM_INTERACT_BLOCKING
@@ -281,21 +282,26 @@
 		update_appearance(UPDATE_OVERLAYS)
 		return ITEM_INTERACT_SUCCESS
 
-	return NONE
-
 /obj/machinery/reagentgrinder/screwdriver_act(mob/living/user, obj/item/tool)
+	. = NONE
+
 	if(operating)
 		balloon_alert(user, "still operating!")
 		return ITEM_INTERACT_BLOCKING
 
-	return default_deconstruction_screwdriver(user, tool)
+	if(default_deconstruction_screwdriver(user, icon_state, icon_state, tool))
+		update_appearance(UPDATE_OVERLAYS)
+		return ITEM_INTERACT_SUCCESS
 
 /obj/machinery/reagentgrinder/crowbar_act(mob/living/user, obj/item/tool)
+	. = NONE
+
 	if(operating)
 		balloon_alert(user, "still operating!")
 		return ITEM_INTERACT_BLOCKING
 
-	return default_deconstruction_crowbar(user, tool)
+	if(default_deconstruction_crowbar(tool))
+		return ITEM_INTERACT_SUCCESS
 
 /obj/machinery/reagentgrinder/proc/on_storage_dump(datum/source, datum/storage/storage, mob/user)
 	SIGNAL_HANDLER
@@ -511,3 +517,4 @@
 	beaker.reagents.convert_reagent(/datum/reagent/consumable/cream, /datum/reagent/consumable/whipped_cream)
 	//power consumed based on the ratio of total reagents mixed
 	use_energy((active_power_usage * (duration / (1 SECONDS))) * (beaker.reagents.total_volume / beaker.reagents.maximum_volume))
+

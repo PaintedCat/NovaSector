@@ -116,19 +116,33 @@
 	if(!AI)
 		return
 
-	var/card_display = AI.display_icon_override || "ai"
+	var/target_skin = AI.display_icon_override || "ai"
+	var/final_state
+	var/state_to_find
+	var/icon/source_icon = icon
 
 	if(AI.stat == DEAD)
-		card_display = "[card_display]_dead"
+		state_to_find = "[target_skin]_dead"
+	else
+		state_to_find = target_skin
 
-	if(!(card_display in icon_states(icon)))
+	if(state_to_find in icon_states(icon))
+		final_state = state_to_find
+		source_icon = icon
+
+	else if(state_to_find in icon_states(AI.icon))
+		final_state = state_to_find
+		source_icon = AI.icon
+
+	else
+		source_icon = icon
 		if(AI.stat == DEAD)
-			card_display = "ai_dead"
+			final_state = "ai_dead"
 		else
-			card_display = "ai"
+			final_state = "ai"
 
-	. += mutable_appearance(icon, card_display)
-	. += emissive_appearance(icon, card_display, src, alpha = src.alpha)
+	. += mutable_appearance(source_icon, final_state)
+	. += emissive_appearance(source_icon, final_state, src, alpha = src.alpha)
 
 	if(AI.control_disabled)
 		var/indicator_state = "[base_icon_state]-off"

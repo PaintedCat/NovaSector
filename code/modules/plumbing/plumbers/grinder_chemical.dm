@@ -4,7 +4,7 @@
 	icon_state = "grinder_chemical"
 	layer = ABOVE_ALL_MOB_LAYER
 	plane = ABOVE_GAME_PLANE
-	reagent_flags = /obj/machinery/plumbing::reagent_flags | DRAINABLE
+	reagent_flags = TRANSPARENT | DRAINABLE
 	buffer = 400
 
 	/// Are we grinding or juicing
@@ -130,7 +130,6 @@
 
 	if((item_to_blend.item_flags & ABSTRACT) || (item_to_blend.flags_1 & HOLOGRAM_1))
 		return
-
 	if(!item_to_blend.blend_requirements(src))
 		return
 

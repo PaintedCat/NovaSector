@@ -53,7 +53,6 @@
 "an" = (
 /obj/structure/table/optable,
 /obj/item/surgical_drapes,
-/obj/machinery/vitals_reader/directional/west,
 /turf/open/floor/mineral/titanium/white,
 /area/shuttle/escape)
 "ao" = (
@@ -236,7 +235,6 @@
 /obj/machinery/stasis{
 	dir = 4
 	},
-/obj/machinery/vitals_reader/directional/west,
 /turf/open/floor/mineral/titanium/white,
 /area/shuttle/escape)
 "aY" = (

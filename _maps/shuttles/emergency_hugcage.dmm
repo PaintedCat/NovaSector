@@ -73,11 +73,10 @@
 /turf/open/floor/mineral/titanium/yellow,
 /area/shuttle/escape)
 "fM" = (
+/obj/structure/sink/directional/north,
 /obj/effect/turf_decal/siding/dark_blue{
 	dir = 8
 	},
-/obj/machinery/stasis,
-/obj/machinery/vitals_reader/directional/south,
 /turf/open/floor/mineral/titanium/blue,
 /area/shuttle/escape)
 "gc" = (
@@ -139,10 +138,10 @@
 /area/shuttle/escape/brig)
 "nZ" = (
 /obj/structure/table/optable,
+/obj/machinery/status_display/evac/directional/west,
 /obj/item/toy/plush/lizard_plushie{
 	name = "Heals-The-Patients"
 	},
-/obj/machinery/vitals_reader/directional/west,
 /turf/open/floor/mineral/titanium/blue,
 /area/shuttle/escape)
 "oo" = (
@@ -160,11 +159,7 @@
 /obj/machinery/defibrillator_mount/loaded{
 	pixel_x = 32
 	},
-/obj/structure/sink/directional/north{
-	dir = 8;
-	pixel_y = 0;
-	pixel_x = 15
-	},
+/obj/machinery/stasis,
 /turf/open/floor/mineral/titanium/blue,
 /area/shuttle/escape)
 "oY" = (
@@ -369,14 +364,11 @@
 /turf/open/floor/mineral/titanium/yellow,
 /area/shuttle/escape)
 "Rg" = (
-/obj/machinery/stasis{
-	dir = 4
-	},
+/obj/machinery/stasis,
 /obj/machinery/light/dim/directional/south{
 	brightness = 5;
 	nightshift_brightness = 4
 	},
-/obj/machinery/vitals_reader/directional/south,
 /turf/open/floor/mineral/titanium/blue,
 /area/shuttle/escape)
 "Rj" = (

@@ -517,7 +517,6 @@
 /obj/effect/turf_decal/tile/blue/anticorner/contrasted{
 	dir = 4
 	},
-/obj/machinery/vitals_reader/directional/east,
 /turf/open/floor/iron/white,
 /area/shuttle/escape)
 "cv" = (
@@ -566,7 +565,6 @@
 /obj/effect/turf_decal/tile/blue/half/contrasted{
 	dir = 4
 	},
-/obj/machinery/vitals_reader/directional/east,
 /turf/open/floor/iron/white,
 /area/shuttle/escape)
 "cE" = (
@@ -620,7 +618,6 @@
 "cI" = (
 /obj/structure/table/optable,
 /obj/effect/turf_decal/tile/blue/fourcorners,
-/obj/machinery/vitals_reader/directional/south,
 /turf/open/floor/iron/white,
 /area/shuttle/escape)
 "cJ" = (
@@ -642,7 +639,6 @@
 "cN" = (
 /obj/machinery/stasis,
 /obj/effect/turf_decal/tile/blue/anticorner/contrasted,
-/obj/machinery/vitals_reader/directional/east,
 /turf/open/floor/iron/white,
 /area/shuttle/escape)
 "cO" = (
@@ -1956,7 +1952,7 @@ aa
 ab
 ab
 ac
-ab
+ac
 ac
 ab
 ab

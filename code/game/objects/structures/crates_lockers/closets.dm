@@ -1026,8 +1026,9 @@ GLOBAL_LIST_EMPTY(roundstart_station_closets)
 		return ITEM_INTERACT_BLOCKING
 
 /obj/structure/closet/verb/verb_toggleopen()
-	set name = "Toggle Open"
 	set src in view(1)
+	set category = "Object"
+	set name = "Toggle Open"
 
 	if(!usr.can_perform_action(src) || !isturf(loc))
 		return
@@ -1056,7 +1057,7 @@ GLOBAL_LIST_EMPTY(roundstart_station_closets)
 		movable_parent.relay_container_resist_act(user, src)
 		return
 	if(!welded && !locked)
-		open(user)
+		open()
 		return
 
 	if(DOING_INTERACTION_WITH_TARGET(user, src))

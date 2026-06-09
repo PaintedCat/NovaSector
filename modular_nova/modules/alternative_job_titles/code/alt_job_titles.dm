@@ -40,7 +40,7 @@
 		"Atmospheric Technician",
 		"Atmospheric Trainee",
 		"Emergency Fire Technician",
-		"Fusion Reactor Operator",
+		"Hypertorus Fusion Reactor Operator",
 		"Gas Synthesis Technician",
 		"Nuclear Reactor Operator",
 		"Firefighter",
@@ -117,8 +117,6 @@
 		"Bouncer",
 		"Service Guard",
 		"Doorman",
-		"Civil Protection Officer",
-		"Public Peacekeeper",
 	)
 
 /datum/job/corrections_officer
@@ -250,8 +248,6 @@
 	alt_titles = list(
 		"Customs Agent",
 		"Supply Guard",
-		"Deck Defense Officer",
-		"Delivery Escort",
 	)
 
 /datum/job/cyborg
@@ -264,7 +260,7 @@
 /datum/job/detective
 	alt_titles = list(
 		"Detective",
-		"Junior Detective",
+		"Detective Cadet",
 		"Forensic Specialist",
 		"Forensic Scientist",
 		"Forensic Technician",
@@ -283,17 +279,12 @@
 		"Medical Student",
 		"Clinician",
 		"Physician Assistant",
-		"Emergency Physician",
+		"Internal Medicine Physician",
+		"Emergency Medicine Physician",
 		"Registered Nurse",
 	)
 
 /datum/job/engineering_guard //see orderly
-	alt_titles = list(
-		"Engineering Guard",
-		"Tide Deterrent",
-		"Power Plant Guard",
-		"Construction Guard",
-	)
 
 /datum/job/geneticist
 	alt_titles = list(
@@ -348,10 +339,9 @@
 		"Legal Clerk",
 		"Prosecutor",
 		"Attorney At Law",
-		"General Counsel",
+		"Corporate General Counsel Attorney",
 		"Corporate Attorney",
 		"Public Defender",
-		"Crew Advocate",
 	)
 
 /datum/job/mime
@@ -363,20 +353,17 @@
 
 /datum/job/nanotrasen_consultant
 	alt_titles = list(
-		"Nanotrasen Representative",
-		"Nanotrasen Consultant",
-		"Nanotrasen Regulatory Advisor",
-		"Nanotrasen Diplomat",
-		"Corporate Adjutant",
-		"Corporate Representative",
-		"Corporate Advocate",
+		"Nanotrasen Corporate Consultant",
+		"Nanotrasen Corporate Advisor",
+		"Nanotrasen Corporate Regulation Advisor",
+		"Nanotrasen Corporate Representative",
+		"Nanotrasen Corporate Diplomat",
 	)
 
 /datum/job/orderly
 	alt_titles = list(
 		"Orderly",
 		"Medical Guard",
-		"Medical Escort",
 	) //other dept guards' alt-titles should be kept to [department] guard to avoid confusion, unless the department gets a re-do.
 
 /datum/job/paramedic
@@ -441,12 +428,6 @@
 	)
 
 /datum/job/science_guard //See orderly
-	alt_titles = list(
-		"Science Guard",
-		"Hazardous Experiment Overwatch",
-		"Xenobiological Recontainment Officer",
-		"Expedition Protection Agent",
-	)
 
 /datum/job/scientist
 	alt_titles = list(
@@ -491,7 +472,7 @@
 	alt_titles = list(
 		"Station Engineer",
 		"Electrician",
-		"Damage Control Technician",
+		"Emergency Damage Control Technician",
 		"Engine Technician",
 		"EVA Technician",
 		"Mechanic",

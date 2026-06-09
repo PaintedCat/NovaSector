@@ -78,7 +78,6 @@
 	sparks.attach(src)
 	AddElement(/datum/element/simple_rotation)
 	AddElement(/datum/element/empprotection, EMP_PROTECT_SELF | EMP_PROTECT_WIRES)
-	AddComponent(/datum/component/usb_port, typecacheof(list(/obj/item/circuit_component/emitter), only_root_path = TRUE))
 
 /obj/machinery/power/emitter/welded/Initialize(mapload)
 	welded = TRUE
@@ -158,7 +157,6 @@
 	var/mutable_appearance/overlay = mutable_appearance(icon, "emitter_overlay")
 	overlay.color = laser_color
 	. += overlay
-	. += emissive_appearance(icon, "emitter_overlay", src, alpha = src.alpha)
 
 /obj/machinery/power/emitter/update_icon_state()
 	if(panel_open)
@@ -191,7 +189,6 @@
 	log_game("[src] turned [active ? "ON" : "OFF"] by [key_name(user)] in [AREACOORD(src)]")
 	investigate_log("turned [active ? "ON" : "OFF"] by [key_name(user)] at [AREACOORD(src)]", INVESTIGATE_ENGINE)
 	update_appearance()
-	SEND_SIGNAL(src, COMSIG_EMITTER_MACHINE_SET_ON, active ? TRUE : FALSE)
 
 /obj/machinery/power/emitter/attack_animal(mob/living/simple_animal/user, list/modifiers)
 	if(ismegafauna(user) && anchored)
@@ -270,7 +267,6 @@
 		else
 			fire_delay = rand(minimum_fire_delay,maximum_fire_delay) * fire_rate_mod
 			shot_number = 0
-	SEND_SIGNAL(src, COMSIG_EMITTER_MACHINE_ON_FIRE)
 	return projectile
 
 /obj/machinery/power/emitter/can_be_unfasten_wrench(mob/user, silent)
@@ -332,10 +328,14 @@
 		return remove_gun(user)
 	if(panel_open && diskie)
 		return remove_disk(user)
-	return default_deconstruction_crowbar(user, item)
+	default_deconstruction_crowbar(item)
+	return TRUE
 
 /obj/machinery/power/emitter/screwdriver_act(mob/living/user, obj/item/item)
-	return default_deconstruction_screwdriver(user, item)
+	if(..())
+		return TRUE
+	default_deconstruction_screwdriver(user, "[base_icon_state]_open", base_icon_state, item)
+	return TRUE
 
 /// Attempt to toggle the controls lock of the emitter
 /obj/machinery/power/emitter/proc/togglelock(mob/user)

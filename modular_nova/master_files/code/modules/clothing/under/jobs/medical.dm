@@ -119,16 +119,7 @@
 *	CHIEF MEDICAL OFFICER
 */
 
-/obj/item/clothing/under/imperial/cmo
+/obj/item/clothing/under/rank/medical/chief_medical_officer/nova/imperial //Rank pins of the Brigadier General
 	desc = "A teal, sterile naval suit with a rank badge denoting the Officer of the Medical Corps. Doesn't protect against blaster fire."
 	name = "chief medical officer's naval jumpsuit"
-	icon_state = "/obj/item/clothing/under/imperial/cmo"
-	greyscale_colors = "#5EB8B8#5EB8B8#5EB8B8#373741#FFFFFF#2979cd#bc2626"
-	flags_1 = NONE
-
-/obj/item/clothing/under/imperialskirt/cmo
-	desc = "A teal, sterile naval skirt with a rank badge denoting the Officer of the Medical Corps. Doesn't protect against blaster fire."
-	name = "chief medical officer's naval skirt"
-	icon_state = "/obj/item/clothing/under/imperialskirt/cmo"
-	greyscale_colors = "#5EB8B8#5EB8B8#373741#FFFFFF#2979cd#bc2626"
-	flags_1 = NONE
+	icon_state = "impcmo"

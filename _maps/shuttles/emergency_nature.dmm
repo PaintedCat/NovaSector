@@ -491,7 +491,6 @@
 	},
 /obj/structure/table/optable,
 /obj/effect/decal/cleanable/blood/old,
-/obj/machinery/vitals_reader/directional/south,
 /turf/open/floor/iron{
 	dir = 1
 	},

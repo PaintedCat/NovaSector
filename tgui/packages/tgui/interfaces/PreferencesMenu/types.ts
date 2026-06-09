@@ -12,7 +12,6 @@ export enum Food {
   Alcohol = 'ALCOHOL',
   Breakfast = 'BREAKFAST',
   Bugs = 'BUGS',
-  Bloody = 'BLOODY', // NOVA EDIT ADDITION - Hemophage Food
   Cloth = 'CLOTH',
   Dairy = 'DAIRY',
   Fried = 'FRIED',
@@ -31,7 +30,7 @@ export enum Food {
   Sugar = 'SUGAR',
   Toxic = 'TOXIC',
   Vegetables = 'VEGETABLES',
-  Egg = 'EGG',
+  Bloody = 'BLOODY', // NOVA EDIT ADDITION - Hemophage Food
 }
 
 export enum JobPriority {
@@ -103,7 +102,7 @@ export type Quirk = {
   erp_quirk: boolean; // NOVA EDIT ADDITION - Purple ERP quirks
 };
 
-// NOVA EDIT ADDITION START
+// NOVA EDIT START
 export type Language = {
   description: string;
   name: string;
@@ -115,56 +114,33 @@ export type Marking = {
   name: string;
   color: string;
   marking_id: string;
-  emissive: boolean;
 };
 
-// Augment data types (from get_constant_data)
-
-/** One selectable augment option which models /datum/augment_item */
-export type AugmentItem = {
-  path: string | null;
-  name: string;
-  cost: number;
-  extra_info: string;
-  has_digi: BooleanLike;
-  allows_styles: BooleanLike;
-  allows_implants: BooleanLike;
-  species_blacklist: Record<string, number> | null;
-  species_whitelist: Record<string, number> | null;
-  ckey_whitelist: string[] | null;
+export type MarkingData = {
+  marking_choices: string[];
+  markings_list: Marking[];
 };
 
-/** One marking option with optional species restriction */
-export type MarkingChoice = {
-  name: string;
-  recommended_species: string | null;
-};
-
-/** One preset with optional species restriction */
-export type MarkingPreset = {
-  name: string;
-  recommended_species: string | null;
-};
-
-/** Models /datum/robotic_style */
-export type RoboticStyle = {
-  name: string;
-  supported_slots: number; // Bitflag
-  has_digi: BooleanLike;
-};
-
-export type AugmentSlot = {
+export type Limb = {
   slot: string;
-  body_zone?: string;
-  slot_flag?: number;
-  is_bodypart: boolean;
-  icon?: string;
-  aug_options: AugmentItem[];
-  has_implant?: boolean;
-  implant_options?: AugmentItem[] | null;
+  name: string;
+  can_augment: boolean;
+  chosen_aug: string;
+  chosen_style: string;
+  aug_choices: Record<string, string>;
+  costs: Record<string, number>;
+  markings: MarkingData;
 };
 
-// NOVA EDIT ADDITION END
+export type Organ = {
+  slot: string;
+  name: string;
+  chosen_organ: string;
+  organ_choices: Record<string, string>;
+  costs: Record<string, number>;
+};
+
+// NOVA EDIT END
 export type QuirkInfo = {
   max_positive_quirks: number;
   quirk_info: Record<string, Quirk>;
@@ -233,7 +209,7 @@ export type CharacterPreferencesData = {
     gender: Gender;
     joblessrole: JoblessRole;
     species: string;
-    loadout_lists: LoadoutList; // NOVA EDIT CHANGE - Multiple loadout presets
+    loadout_lists: LoadoutList; // NOVA EDIT CHANGE - Multiple loadout presets - ORIGINAL: loadout_list: LoadoutList;
     job_clothes: BooleanLike;
     loadout_index: string; // NOVA EDIT ADDITION: Multiple loadout presets
     background_state: string; // NOVA EDIT ADDITION: Swappable character editor backgrounds
@@ -269,13 +245,10 @@ export type PreferencesMenuData = {
 
   job_alt_titles: Record<string, string>;
 
-  markings: Record<string, Marking[]>;
-  augments: Record<string, string>;
-  augment_styles: Record<string, string>;
-
-  allow_mismatched_parts: BooleanLike;
-  digi_legs: BooleanLike;
-  taur_legs: BooleanLike;
+  robotic_styles: string[];
+  limbs_data: Limb[];
+  organs_data: Organ[];
+  marking_presets: string[];
 
   selected_languages: Language[];
   unselected_languages: Language[];
@@ -287,7 +260,6 @@ export type PreferencesMenuData = {
   ckey: string;
   is_donator: BooleanLike;
   is_nova_star: BooleanLike;
-
   // NOVA EDIT ADDITION END
   keybindings: Record<string, string[]>;
   overflow_role: string;
@@ -328,14 +300,6 @@ export type ServerData = {
     loadout_tabs: LoadoutCategory[];
   };
   species: Record<string, Species>;
-  // NOVA EDIT ADDITION START
-  background_state: { choices: string[] };
-  limbs_and_markings?: {
-    robotic_styles: RoboticStyle[];
-    augment_items: AugmentSlot[];
-    marking_choices: Record<string, MarkingChoice[]>;
-    marking_presets: MarkingPreset[];
-  };
-  // NOVA EDIT ADDITION END
+  background_state: { choices: string[] }; // NOVA EDIT ADDITION
   [otherKey: string]: unknown;
 };

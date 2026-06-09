@@ -92,11 +92,6 @@
 /obj/machinery/door/airlock/cult/unruned/glass/friendly,
 /turf/open/floor/cult,
 /area/shuttle/escape)
-"s" = (
-/obj/machinery/stasis,
-/obj/machinery/vitals_reader/directional/north,
-/turf/open/floor/cult,
-/area/shuttle/escape)
 "t" = (
 /obj/structure/closet/emcloset,
 /turf/open/floor/cult,
@@ -249,11 +244,6 @@
 "V" = (
 /obj/machinery/power/shuttle_engine/propulsion,
 /turf/open/floor/plating/airless,
-/area/shuttle/escape)
-"W" = (
-/obj/structure/showcase/horrific_experiment,
-/obj/machinery/vitals_reader/directional/south,
-/turf/open/floor/cult,
 /area/shuttle/escape)
 "X" = (
 /obj/machinery/status_display/evac/directional/north,
@@ -478,7 +468,7 @@ j
 j
 j
 c
-s
+Z
 j
 Z
 U
@@ -504,7 +494,7 @@ M
 c
 P
 Q
-W
+P
 b
 b
 "}

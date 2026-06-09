@@ -714,10 +714,6 @@
 	name = "Flowerchild (Ponytail Only)"
 	icon_state = "hair_flowerchild_ponyful"
 
-/datum/sprite_accessory/hair/nova/clown
-	name = "Clown"
-	icon_state = "hair_clown"
-
 /datum/sprite_accessory/hair/nova/tesharimohawk
 	name = "Teshari Mohawk"
 	icon_state = "hair_teshmohawk"
@@ -725,10 +721,6 @@
 /datum/sprite_accessory/hair/nova/tesharimohawkalt
 	name = "Teshari Mohawk Alt"
 	icon_state = "hair_teshmohawkalt"
-
-/datum/sprite_accessory/hair/nova/dreadtail
-	name = "Dreadtail"
-	icon_state = "hair_dreadtail"
 
 // Facial hair
 

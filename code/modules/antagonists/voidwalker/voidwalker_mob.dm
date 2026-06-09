@@ -139,7 +139,7 @@
 /mob/living/basic/voidwalker/early_melee_attack(atom/target, list/modifiers, ignore_cooldown)
 	. = ..()
 
-	if(. || !can_do_abductions)
+	if(!. || !can_do_abductions)
 		return
 
 	if(ishuman(target))
@@ -151,12 +151,12 @@
 		hewmon.apply_status_effect(/datum/status_effect/void_chomped)
 
 		if(!should_attack)
-			return BASIC_MOB_CONTINUE_ATTACK_CHAIN
+			return FALSE
 
 		if(hewmon.stat == HARD_CRIT && !hewmon.has_trauma_type(/datum/brain_trauma/voided))
 			hewmon.balloon_alert(src, "is in crit!")
 			hewmon.Stun(5 SECONDS) // blocks some crit movement mechanics from a bunch of sources
-			return BASIC_MOB_END_ATTACK_CHAIN_COOLDOWN
+			return FALSE
 
 	// left click
 	if(LAZYACCESS(modifiers, LEFT_CLICK))
@@ -167,9 +167,9 @@
 		melee_damage_type = rclick_damage_type
 
 		if(!istype(target, /turf/closed/wall))
-			return BASIC_MOB_CONTINUE_ATTACK_CHAIN
+			return
 		INVOKE_ASYNC(src, PROC_REF(try_convert_wall), target)
-	return BASIC_MOB_CONTINUE_ATTACK_CHAIN
+	return TRUE
 
 /// Called by the regenerator component so we only regen in space
 /mob/living/basic/voidwalker/proc/can_regen()

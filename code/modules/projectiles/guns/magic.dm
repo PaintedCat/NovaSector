@@ -13,7 +13,6 @@
 	clumsy_check = FALSE
 	trigger_guard = TRIGGER_GUARD_ALLOW_ALL // Has no trigger at all, uses magic instead
 	pin = /obj/item/firing_pin/magic
-	about_to_shoot_inside_mail_text = "It's humming with energy!"
 	/// If true, our fire sound gets lower as our charges decrease
 	var/pitch_with_charges = TRUE
 	/// What kind of magic is this
@@ -107,10 +106,8 @@
 	return charges
 
 /obj/item/gun/magic/recharge_newshot()
-	if (!charges || !chambered || chambered.loaded_projectile)
-		return
-	chambered.newshot()
-	return ..()
+	if (charges && chambered && !chambered.loaded_projectile)
+		chambered.newshot()
 
 /obj/item/gun/magic/handle_chamber()
 	if(chambered && !chambered.loaded_projectile) //if BB is null, i.e the shot has been fired...

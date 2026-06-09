@@ -25,7 +25,6 @@
 	)
 	time = 5 SECONDS
 	category = CAT_WEAPON_RANGED
-	delete_contents = FALSE
 
 /// Grenade
 /datum/storage/lockbox/grenades
@@ -40,7 +39,7 @@
 	var/obj/item/grenade/starting_nade = /obj/item/grenade
 
 /obj/item/storage/lockbox/anomaly_grenades/PopulateContents()
-	for(var/i in 1 to 7)
+	for(var/i in 1 to 5)
 		new starting_nade(src)
 
 /obj/item/storage/lockbox/anomaly_grenades/anchor
