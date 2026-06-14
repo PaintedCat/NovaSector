@@ -46948,7 +46948,9 @@
 "gUW" = (
 /obj/effect/turf_decal/tile/blue/full,
 /obj/machinery/duct,
-/obj/machinery/defibrillator_mount/mobile/immobile,
+/obj/machinery/defibrillator_mount/mobile{
+	anchored = 1
+	},
 /turf/open/floor/iron/white/small,
 /area/station/medical/treatment_center)
 "gVb" = (
@@ -109772,7 +109774,9 @@
 /area/station/ai/satellite/chamber)
 "qih" = (
 /obj/effect/turf_decal/tile/blue/full,
-/obj/machinery/defibrillator_mount/mobile/immobile,
+/obj/machinery/defibrillator_mount/mobile{
+	anchored = 1
+	},
 /turf/open/floor/iron/white/small,
 /area/station/medical/treatment_center)
 "qik" = (
